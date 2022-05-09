@@ -1,7 +1,7 @@
 import * as Koa from 'koa'
 import * as process from 'process'
 
-export function shutdownGraceful() {
+export function shutdownGracefully() {
   const reqSet = new Set<ReturnType<Koa.Next>>()
   let exiting = false
   process.on('SIGINT', async () => {

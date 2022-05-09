@@ -36,11 +36,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.shutdownGraceful = void 0;
-var Koa = require("koa");
+exports.shutdownGracefully = void 0;
 var process = require("process");
-var app = new Koa();
-function shutdownGraceful() {
+function shutdownGracefully() {
     var _this = this;
     var reqSet = new Set();
     var exiting = false;
@@ -95,18 +93,4 @@ function shutdownGraceful() {
         });
     }); };
 }
-exports.shutdownGraceful = shutdownGraceful;
-app
-    .use(shutdownGraceful())
-    .use(function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, new Promise(function (r) { return setTimeout(function () { return r(null); }, 5000); })];
-            case 1:
-                _a.sent();
-                ctx.set('Content-Type', 'text/html');
-                ctx.body = '<h1>hello world</h1>';
-                return [2 /*return*/];
-        }
-    });
-}); }).listen(80);
+exports.shutdownGracefully = shutdownGracefully;
