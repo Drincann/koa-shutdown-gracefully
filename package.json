@@ -1,0 +1,16 @@
+{
+  "name": "koa-shutdown-gracefully",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc ./index.ts --outDir dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "@types/koa": "^2.13.4"
+  }
+}
