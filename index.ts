@@ -6,9 +6,6 @@ export function shutdownGracefully() {
   let exiting = false
   process.on('SIGINT', async () => {
     exiting = true
-    console.log('SIGINT')
-    console.log(reqSet);
-
     await Promise.allSettled(Array.from(reqSet))
     setImmediate(() => {
       process.exit(0)
@@ -27,7 +24,6 @@ export function shutdownGracefully() {
       ctx.status = 503
       return
     }
-    console.log(reqSet)
     await handleRequest(next)
   }
 }

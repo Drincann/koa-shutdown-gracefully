@@ -47,9 +47,7 @@ function shutdownGracefully() {
             switch (_a.label) {
                 case 0:
                     exiting = true;
-                    console.log('SIGINT');
-                    console.log(reqSet);
-                    return [4 /*yield*/, Promise.all(Array.from(reqSet))];
+                    return [4 /*yield*/, Promise.allSettled(Array.from(reqSet))];
                 case 1:
                     _a.sent();
                     setImmediate(function () {
@@ -84,7 +82,6 @@ function shutdownGracefully() {
                         ctx.status = 503;
                         return [2 /*return*/];
                     }
-                    console.log(reqSet);
                     return [4 /*yield*/, handleRequest(next)];
                 case 1:
                     _a.sent();
