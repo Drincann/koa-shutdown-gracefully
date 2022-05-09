@@ -9,7 +9,7 @@ export function shutdownGracefully() {
     console.log('SIGINT')
     console.log(reqSet);
 
-    await Promise.all(Array.from(reqSet))
+    await Promise.allSettled(Array.from(reqSet))
     setImmediate(() => {
       process.exit(0)
     })
