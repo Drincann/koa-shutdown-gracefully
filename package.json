@@ -1,6 +1,6 @@
 {
   "name": "koa-shutdown-gracefully",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc ./index.ts --outDir dist"
