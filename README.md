@@ -23,7 +23,7 @@ app.use(shutdownGracefully())
 
 ```js
 const { shutdownGracefully } = require('koa-shutdown-gracefully');
-const app = require('koa')();
+const app = new (require('koa'))();
 app.use(shutdownGracefully())
   .use(async (ctx,) => {
     await new Promise(r => setTimeout(() => r(null), 10000))
